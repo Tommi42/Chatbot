@@ -20,7 +20,6 @@ if input:
         st.write(input)
     st.session_state.message_list.append({"role": "user", "content": input})
     response = get_response()
-    print(response)
     with st.chat_message("assistant"):
         response_txt = st.write_stream(response)
     st.session_state.message_list.append({"role": "assistant", "content": response_txt})
